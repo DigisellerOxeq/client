@@ -1,0 +1,276 @@
+.order-page {
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-list-move,
+.fade-list-enter-active,
+.fade-list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.fade-list-enter-from,
+.fade-list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.fade-list-leave-active {
+  position: absolute;
+}
+
+.order-section.fade-in {
+  animation-delay: var(--delay);
+}
+
+.loading-container,
+.items-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner.small {
+  width: 30px;
+  height: 30px;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  padding: 2rem;
+  background-color: #fdecea;
+  border-radius: 8px;
+}
+
+.retry-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.retry-button:hover {
+  background-color: #c0392b;
+}
+
+.order-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-total {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  border-top: 2px solid #ddd;
+}
+
+.status-new {
+  color: #3498db;
+  font-weight: bold;
+}
+
+.status-processing {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.status-success {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.status-delivered {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.status-error {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.not-found {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+}
+
+/* Дополнительные стили анимации товаров */
+.order-items-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.animated-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeItem 0.5s ease forwards;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid darkslategray;
+  border-bottom-color: darkgray;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 0.5rem;
+}
+
+.item-content p {
+  margin: 0;
+  word-break: break-all;
+  flex: 1;
+}
+
+.copy-icon {
+  cursor: pointer;
+  margin-left: 0.75rem;
+  color: #666;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.copy-icon:hover {
+  color: #007bff;
+}
+
+.codes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.codes-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.codes-header .copy-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.codes-header .copy-icon:hover {
+  color: #007bff;
+}
+
+.codes-header .copy-label {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #323232;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 0.95;
+  font-family: 'Arial', sans-serif;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeItem {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
